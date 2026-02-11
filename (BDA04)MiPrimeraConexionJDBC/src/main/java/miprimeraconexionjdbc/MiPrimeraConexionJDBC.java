@@ -10,6 +10,7 @@ import java.sql.Statement;
 /**
  *
  * @author Jesús Pedro Lares Valencia - 00000233383
+ * // probando commits y push con ide de netbeans
  */
 public class MiPrimeraConexionJDBC {
 
