@@ -9,7 +9,7 @@ import java.sql.Statement;
 
 /**
  *
- * @author darkm
+ * @author Jesús Pedro Lares Valencia - 00000233383
  */
 public class MiPrimeraConexionJDBC {
 
