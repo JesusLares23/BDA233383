@@ -6,6 +6,7 @@ package persistencia;
 
 import dominio.Cliente;
 import jakarta.persistence.EntityManager;
+import jakarta.persistence.TypedQuery;
 import java.util.List;
 
 /**
@@ -13,6 +14,7 @@ import java.util.List;
  * @author martinbl
  */
 public class ClienteDAO implements IClienteDAO {
+
     @Override
     public void guardar(Cliente cliente, EntityManager em) {
         em.persist(cliente);
@@ -43,6 +45,13 @@ public class ClienteDAO implements IClienteDAO {
 
     @Override
     public List<Cliente> buscarTodos(EntityManager em) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        TypedQuery<Cliente> query = em.createQuery(
+                "SELECT - FROM Cliente c ORDER BY c.id", Cliente.class);
+        
+        // Limita la cantidad de resultados obtenidos a la vez
+        query.setFirstResult(0);
+        query.setMaxResults(100);
+        
+        return query.getResultList();
     }
 }
