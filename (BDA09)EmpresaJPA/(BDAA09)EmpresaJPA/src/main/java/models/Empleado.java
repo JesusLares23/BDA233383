@@ -35,8 +35,6 @@ public class Empleado implements Serializable {
             columnDefinition = "DECIMAL CHECK = (salario >= 0)")
     private double salario;
     
-    
-
     public Long getId() {
         return id;
     }

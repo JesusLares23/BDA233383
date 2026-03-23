@@ -28,4 +28,5 @@
         <maven.compiler.target>22</maven.compiler.target>
         <exec.mainClass>EmpresaJPA</exec.mainClass>
     </properties>
+    <name>(BDAA09)EmpresaJPA</name>
 </project>
