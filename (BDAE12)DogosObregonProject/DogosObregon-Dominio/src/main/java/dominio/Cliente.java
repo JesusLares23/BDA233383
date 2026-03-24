@@ -15,6 +15,24 @@ import java.util.Set;
  * @author martinbl
  */
 @Entity
+@NamedQueries({
+    @NamedQuery(
+            name = "Cliente.buscarPorNombre",
+            query = "SELECT c FROM Cliente c WHERE c.nombre = :nombre"
+    ),
+    @NamedQuery(
+            name = "Cliente.buscarNacidosDespuesDe",
+            query = "SELECT c FROM Cliente c WHERE c.fchNac > :fecha ORDER BY c.fchNac"
+    ),
+    @NamedQuery(
+            name = "Cliente.buscarPorRecomendador",
+            query = "SELECT c FROM Cliente c JOIN FETCH c.ClienteRecomienda r"
+    ),
+    @NamedQuery(
+            name = "Cliente.clienteConPedidos",
+            query = "SELECT c FROM Cliente c JOIN FETCH c.pedidos p"
+    )    
+})
 public class Cliente implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -136,7 +154,5 @@ public class Cliente implements Serializable {
     public void setPedidos(Set<Pedido> pedidos) {
         this.pedidos = pedidos;
     }
-    
-    
-    
+
 }

@@ -28,4 +28,5 @@
         <maven.compiler.target>22</maven.compiler.target>
         <exec.mainClass>DogosObregon</exec.mainClass>
     </properties>
+    <name>(BDAE11)DogosObregon</name>
 </project>
